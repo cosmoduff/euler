@@ -1,0 +1,2 @@
+class dnsmasq {
+        package {dnsmasq
