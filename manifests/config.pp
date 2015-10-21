@@ -1,4 +1,4 @@
-class dnsamasq::config {
+class dnsmasq::config {
 
    $ip      = $dnsmasq::params::default_ip
    $domains = $dnsmasq::parmas::default_domains
