@@ -1,7 +1,7 @@
 class dnsmasq::config {
 
    $ip      = $dnsmasq::params::default_ip
-   $domains = $dnsmasq::parmas::default_domains
+   $domains = $dnsmasq::params::default_domains
 
    $secondary_dns = $dnsmasq::params::default_sec_dns
 
@@ -14,7 +14,7 @@ class dnsmasq::config {
     content => template("dnsmasq/dnsmasq.conf.erb"),
    }
 
-   file { '/etc/dnsmasq.conf':
+   file { '/etc/resolv.conf':
     ensure  => present,
     owner   => 'root',
     group   => 'root',

@@ -81,7 +81,7 @@
 #address=/double-click.net/127.0.0.1
 
 <% @domains.each do |domain| -%>
-address=/<%= domain %>/<%= @default_ip %>
+address=/<%= domain %>/<%= @ip %>
 <% end -%>
 
 # --address (and --server) work with IPv6 addresses too.
