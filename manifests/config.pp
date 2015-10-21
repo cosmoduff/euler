@@ -10,7 +10,7 @@ class dnsamasq::config {
     require => Package['dnsmasq'],
     owner   => 'root',
     group   => 'root',
-    mode    => 0644
+    mode    => 0644,
     content => template("dnsmasq.conf.erb"),
    }
 
