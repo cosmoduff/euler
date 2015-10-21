@@ -4,5 +4,5 @@ class dnsmasq::params {
     $default_domains    = ['bob.com',
                         'alice.com',]
 
-    $defult_sec_dns = '8.8.8.8'
+    $default_sec_dns = '8.8.8.8'
 }
