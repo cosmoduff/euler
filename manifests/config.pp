@@ -1,7 +1,7 @@
 class dnsamasq::config {
 
    $ip      = $dnsmasq::params::default_ip
-   $domains = $dnsmasq::parmas::domains
+   $domains = $dnsmasq::parmas::default_domains
 
    $secondary_dns = $dnsmasq::params::default_sec_dns
 
@@ -11,7 +11,7 @@ class dnsamasq::config {
     owner   => 'root',
     group   => 'root',
     mode    => 0644,
-    content => template("dnsmasq.conf.erb"),
+    content => template("dnsmasq/dnsmasq.conf.erb"),
    }
 
    file { '/etc/dnsmasq.conf':
@@ -19,7 +19,7 @@ class dnsamasq::config {
     owner   => 'root',
     group   => 'root',
     mode    => 0644,
-    content => template("resolv.conf.erb"),
+    content => template("dnsmasq/resolv.conf.erb"),
    }
 
 }

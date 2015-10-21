@@ -2,7 +2,7 @@ class dnsmasq::service {
 
     service { 'dnsmasq':
       ensure    => running,
-      enabled   => true,
+      enable   => true,
       subscribe => File['/etc/dnsmasq.conf'],
     }
 
