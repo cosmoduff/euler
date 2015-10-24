@@ -1,9 +1,16 @@
 ##Dnsamasq Puppet Module
 ###Summary
-This module contains a single class named dnsmasq. The class manages the package, configuration files and service of dnsmasq. It accepts three different class parameters.The first, domains, accepts an array of domains to be configured in the dnsmasq.conf file. The second class parameter, ip, sets the ip address to the domains in dnsmasq.conf. The third, external_dns, sets a external dns server in resolv.conf to lookup entries that are not found in dnsmasq. If the external_dns class parameter is set to "", or false, an external dns will not be used and only domains listed in dnsmasq.conf will be resolved.
+This module contains a single class named dnsmasq. The class manages the package, configuration files and service of dnsmasq. It accepts three class parameters: domains, ip and external_dns.
+###Class Parameters
+domains (array): An array of domain names that are inserted in dnsmasq.conf
+
+ip: The ip address that the domains from the domains class paremeter will resolve to
+
+external_dns: The external nameserver that will be inserted into resolv.conf. If it's set to "" or false an external or secondary nameserver will not be entered.
 ###Example Configuration
 The following configuration of the dnsmasq class will have bob.com and alice.com resolve to 1.2.3.4. It will also use the nameserver 8.8.8.8 as an external, or secondary, nameserver.
 
+```
 class dnsmasq {
 
   $domains = ['bob.com',
@@ -41,3 +48,4 @@ class dnsmasq {
     }
 
 }
+```
