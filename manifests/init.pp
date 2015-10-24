@@ -15,9 +15,9 @@ class dnsmasq {
   $domains = ['bob.com',
             'alice.com']
   
-  $ip      =  1.2.3.4
+  $ip      =  '1.2.3.4'
 
-  $external_dns = 8.8.8.8
+  $external_dns = '8.8.8.8'
 
   package { 'dnsmasq':
     ensure => installed,
