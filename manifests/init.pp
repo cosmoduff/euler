@@ -12,11 +12,12 @@
 
 class dnsmasq {
 
-  $ip      =  1.2.3.4
   $domains = ['bob.com',
             'alice.com']
+  
+  $ip      =  1.2.3.4
 
-  $secondary_dns = 8.8.8.8
+  $external_dns = 8.8.8.8
 
   package { 'dnsmasq':
     ensure => installed,
