@@ -1,6 +1,6 @@
 ##Dnsamasq Puppet Module
 ###Summary
-This module contains a single class named dnsmasq. The class manages the package, configuration files and service of dnsmasq. It accepts three class parameters: domains, ip and external_dns.
+This module contains a single class named dnsmasq. The class manages the package, configuration files and service of dnsmasq. It accepts three class parameters: domains, ip and external_dns. A script is also included that will check and see if the dnsmasq service is running and to make sure it is listening. This script should be run as root to work properly.
 ###Class Parameters
 domains (array): An array of domain names that are inserted in dnsmasq.conf
 
