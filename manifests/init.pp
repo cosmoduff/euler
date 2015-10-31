@@ -10,14 +10,13 @@
 # Start and enable the dnsmasq service
 #
 
-class dnsmasq {
+class dnsmasq (
+$domains = $dnsmasq::params::domains,
+$ip = $dnsmasq::params::ip
+)
 
-  $domains = ['bob.com',
-            'alice.com']
-  
-  $ip      =  '1.2.3.4'
-
-  $external_dns = '8.8.8.8'
+{
+  $external_dns = $dnsmasq::params::external_dns
 
   package { 'dnsmasq':
     ensure => installed,
