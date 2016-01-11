@@ -1,6 +1,0 @@
-#Managed by puppet
-nameserver 127.0.0.1
-#External nameservers
-<% if @secondary_dns -%>
-nameserver <%= @external_dns %>
-<% end -%>
