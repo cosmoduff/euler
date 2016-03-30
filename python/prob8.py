@@ -6,15 +6,15 @@ greatest = 0
 start = 0
 end = 13
 
-while end <= len(number):
-	product = 1
-	for n in number[start:end]:
-		if n == 0:
-			break
-		product = product * int(n)
-		if product > greatest:
-			greatest = product
-	start = end
-	end += 13
+while end < len(number):
+    product = 1
+    for n in number[start:end]:
+        if n == 0:
+            break
+        product = product * int(n)
+        if product > greatest:
+                greatest = product
+    start += 1 
+    end += 1
 
 print(greatest)
