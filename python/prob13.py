@@ -103,3 +103,11 @@ numbers = [
 53503534226472524250874054075591789781264330331690
 ]
 
+sum = 0
+
+# Sum all 50 digit numbers 
+for n in numbers:
+    sum += n
+
+# convert the number to a string and print the first ten characters
+print(str(sum)[0:10])
