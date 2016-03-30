@@ -9,4 +9,8 @@ def getprime(p):	#find prime number
        if p % n == 0:
           p = p / n
           print(n)
+
 getprime(num)
+
+# to do
+# make it so that the program terminates
