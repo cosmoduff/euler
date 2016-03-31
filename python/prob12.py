@@ -1,8 +1,22 @@
-#!/bin/python
+#!/bin/python3
 
-#What is the value of the first triangle number to have over five hundred divisors?
+# What is the value of the first triangle number to have over five hundred divisors?
 
 import math
+
+def is_prime(n):
+    if n <= 1:
+        return False
+    elif n <= 3:
+        return True
+    elif n % 2 == 0 or n % 3 == 0:
+        return False
+    i = 5
+    while i * i <=n:
+        if n % i == 0 or n % (i + 2) == 0:
+                return False
+        i = i + 6
+    return True
 
 def genTriangle(x):
     triangle = (x*(x+1))/2
@@ -10,22 +24,27 @@ def genTriangle(x):
 
 def countDivisors(x):
     count = 0
-    for y in range(1,int(math.sqrt(x))):
+    square = math.sqrt(x)
+    for y in range(1,int(square)):
         if x % y == 0:
             count += 1
-    return count
-
-#number = input("Enter a number: ")
+    count = count * 2
+    if square * square != x:
+        return count
+    else:
+        return count + 1
 
 number = 1
 
 while True:
-    trianlge = genTriangle(number)
-    count = countDivisors(int(number))
-    print(number, count)
-    if count > 500:
-        break
-    else:
+    triangle = genTriangle(number)
+    if is_prime(triangle):
         number += 1
-# notes
-# add prime check to quickly move on as a prime only has two divisors
+        continue
+    else:
+        count = countDivisors(int(triangle))
+        if count > 500:
+            print(triangle)
+            break
+        else:
+            number += 1
