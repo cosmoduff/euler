@@ -1,0 +1,4 @@
+[package]
+name = "prob2"
+version = "0.1.0"
+authors = ["Seth Swanson <rust@sethswanson.net>"]
