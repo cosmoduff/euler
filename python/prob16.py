@@ -4,10 +4,14 @@ import math
 
 num = 2**1000
 
-num_str = str(num)
-solution = 0
+def add_digits(n):
+# Takes a number n and returns the sum of the digits of that number
+# Ex 32768 3+2+7+6+8=26
+    sum = 0
 
-for x in num_str:
-   solution += int(x)
+    for x in str(n):
+        sum += int(x)
 
-print(solution)
+    return sum
+
+print(add_digits(num))
