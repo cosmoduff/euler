@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-#What is the smallest positive number that is evenly divisible by all of the numbers from 1 tp 20?
+#What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 
 number=2520
 
