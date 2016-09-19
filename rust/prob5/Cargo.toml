@@ -1,0 +1,6 @@
+[package]
+name = "prob5"
+version = "0.1.0"
+authors = ["Seth Swanson <sethswanson@gmail.com>"]
+
+[dependencies]
