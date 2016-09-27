@@ -1,8 +1,8 @@
 # Rust files
-rust/*/Cargo.toml
-rust/*/Cargo.lock
-rust/*/target/
-rust/*/bin/
+Cargo.toml
+Cargo.lock
+target/
+bin/
 
 # Python
 __pycache__
