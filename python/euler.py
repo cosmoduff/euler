@@ -83,6 +83,10 @@ def factorial(n):
 # Ex 5 -> 120
     factorial =1
     while n > 1:
-        factorial *= x
+        factorial *= n
         n -= 1
     return factorial
+
+def lattice_routes(x, y):
+    routes = factorial(x) / (factorial(y) * factorial(x - y))
+    return routes
