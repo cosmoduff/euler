@@ -74,6 +74,6 @@ def add_digits(n):
     sum = 0
 
     for x in str(n):
-        sum += int(x)
+        sum += int(n)
 
     return sum
