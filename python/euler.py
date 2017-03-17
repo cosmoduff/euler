@@ -77,3 +77,16 @@ def add_digits(n):
         sum += int(x)
 
     return sum
+
+def factorial(n):
+# Takes a number n and returns it factorial
+# Ex 5 -> 120
+    factorial =1
+    while n > 1:
+        factorial *= n
+        n -= 1
+    return factorial
+
+def lattice_routes(x, y):
+    routes = factorial(x) / (factorial(y) * factorial(x - y))
+    return routes
