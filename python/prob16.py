@@ -1,7 +1,5 @@
 # What is th sum of the digits of the number 2^1000?
 
-import math
-
 num = 2**1000
 
 def add_digits(n):
