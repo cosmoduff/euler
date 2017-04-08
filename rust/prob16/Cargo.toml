@@ -1,0 +1,8 @@
+[package]
+name = "prob16"
+version = "0.1.0"
+authors = ["Seth Swanson <sethswanson@gmail.com>"]
+
+[dependencies]
+num = "0.1.37"
+num-traits = "0.1.37"
