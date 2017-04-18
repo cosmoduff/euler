@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 #What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20×20 grid?
 """
 08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
@@ -44,7 +45,27 @@ GRID = [
 		[19, 4, 42, 16, 73, 38, 25, 39, 11, 24, 94, 72, 18, 8, 46, 29, 32, 40, 62, 76, 36],
 		[20, 20, 69, 36, 41, 72, 30, 23, 88, 34, 62, 99, 69, 82, 67, 59, 85, 74, 4, 36, 16],
 		[21, 20, 73, 35, 29, 78, 31, 90, 1, 74, 31, 49, 71, 48, 86, 81, 16, 23, 57, 5, 54],
-		[22, 1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48],
+		[22, 1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]
 	]
 
-print(GRID[0,0])
+print(GRID[1][0])
+
+def horizontal(grid):
+    greatest = 0
+    start = 0
+    for line in grid:
+        while start < len(line) - 4:
+            total = 1
+            end = start + 4
+            section = line[start:end]
+            for x in section:
+                total = total * x
+            start += 1
+            if total > greatest:
+                greatest = total
+    return greatest
+
+def main():
+    print(horizontal(GRID))
+
+main()
