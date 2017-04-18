@@ -48,8 +48,6 @@ GRID = [
 		[22, 1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]
 	]
 
-print(GRID[1][0])
-
 def horizontal(grid):
     greatest = 0
     start = 0
@@ -65,7 +63,61 @@ def horizontal(grid):
                 greatest = total
     return greatest
 
+def vertical(grid):
+    greatest = 0
+    row = 0
+    column = 0
+    while row < len(grid) - 4:
+        while column < len(grid[row]) - 4:
+            pos1 = grid[row][column]
+            pos2 = grid[row + 1][column]
+            pos3 = grid[row + 2][column]
+            pos4 = grid[row + 3][column]
+            total = pos1 * pos2 * pos3 * pos4
+            if total > greatest:
+                greatest = total
+            column += 1
+        row += 1
+    return greatest
+    
+def right_diag(grid):
+    greatest = 0
+    row = 0
+    column = 0
+    while row < len(grid) - 4:
+        while column < len(grid[row]) - 4:
+            pos1 = grid[row][column]
+            pos2 = grid[row + 1][column + 1]
+            pos3 = grid[row + 2][column + 2]
+            pos4 = grid[row + 3][column + 3]
+            total = pos1 * pos2 * pos3 * pos4
+            if total > greatest:
+                greatest = total
+            column += 1
+        row += 1
+    return greatest
+
+def left_diag(grid):
+    greatest = 0
+    row = 3
+    column = 0
+    while row < len(grid) - 1:
+        while column < len(grid[row]) - 4:
+            pos1 = grid[row][column]
+            pos2 = grid[row + 1][column + 1]
+            pos3 = grid[row + 2][column + 2]
+            pos4 = grid[row + 3][column + 3]
+            total = pos1 * pos2 * pos3 * pos4
+            if total > greatest:
+                greatest = total
+            column += 1
+        row += 1
+    return greatest
+
 def main():
     print(horizontal(GRID))
+    print(vertical(GRID))
+    print(right_diag(GRID))
+    print(left_diag(GRID))
 
 main()
