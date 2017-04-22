@@ -121,9 +121,7 @@ def left_diag(grid):
     return greatest
 
 def main():
-    print(horizontal(GRID))
-    print(vertical(GRID))
-    print(right_diag(GRID))
-    print(left_diag(GRID))
+    maxs = [horizontal(GRID),vertical(GRID),right_diag(GRID),left_diag(GRID)]
+    print(max(maxs))
 
 main()
