@@ -21,7 +21,7 @@ fn main() {
             if is_palindrome(product) {
                 if product > palindrome {
                     palindrome = product;
-                    println!("x {} y {} palindrome {}", x,y,palindrome);
+                    println!("{}", palindrome);
                     break
                 }
             }
